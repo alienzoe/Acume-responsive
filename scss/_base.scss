@@ -1,0 +1,26 @@
+// @import "reset";
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// $background-color: #1d1d1d;
+// $primary-color: #fff;
+// $secondary-color: #eece1a;
+
+// $profile-image: url("../img/profile.jpg");
+// $back-image: url("../img/landing-img.jpg");
+
+// @mixin easeOut {
+//   transition: all 0.5 ease-out;
+// }
+
+$header-back-color: #35424a;
+$header-color: #ffffff;
+$primary-color: #fff;
+$secondary-color: #e8491d;

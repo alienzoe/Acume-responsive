@@ -1,0 +1,233 @@
+@import "base";
+
+body {
+  font: 15px/1.5 "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4;
+
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .button_1 {
+    height: 35px;
+    background-color: $secondary-color;
+    border: 0;
+    padding: 0 20px;
+    color: $primary-color;
+  }
+
+  .dark {
+    padding: 15px;
+    background-color: $header-back-color;
+    color: $primary-color;
+    margin: 10px 0;
+  }
+
+  header {
+    background-color: $header-back-color;
+    color: $header-color;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: $secondary-color 3px solid;
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    li {
+      display: inline;
+      padding: 0 20px;
+    }
+
+    #branding {
+      float: left;
+
+      h1 {
+        margin: 0;
+      }
+    }
+
+    nav {
+      float: right;
+      margin-top: 10px;
+
+      li {
+        position: relative;
+      }
+
+      li::before {
+        content: "";
+        width: 0;
+        height: 2px;
+        background-color: $secondary-color;
+        position: absolute;
+        left: 5%;
+        bottom: -3px;
+        transition: 0.3s;
+      }
+
+      li:hover::before {
+        width: 90%;
+      }
+
+      a:hover {
+        color: #cccccc;
+        font-weight: bold;
+      }
+    }
+
+    .highlight,
+    .current a {
+      color: $secondary-color;
+      font-weight: bold;
+    }
+  }
+
+  section {
+    &#showcase {
+      width: 100%;
+      min-height: 400px;
+      background-image: url("../img/showcase.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+      color: $primary-color;
+
+      h1 {
+        margin-top: 100px;
+        font-size: 55px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    &#newsletter {
+      padding: 15px;
+      color: $primary-color;
+      background-color: $header-back-color;
+
+      h1 {
+        float: left;
+      }
+
+      form {
+        float: right;
+        margin-top: 15px;
+      }
+
+      input[type="email"] {
+        padding: 4px;
+        height: 25px;
+        width: 250px;
+      }
+    }
+
+    &#boxes {
+      margin-top: 20px;
+
+      .box {
+        float: left;
+        text-align: center;
+        width: 30%;
+        padding: 10px;
+
+        img {
+          width: 90px;
+        }
+      }
+    }
+
+    &#main {
+      aside {
+        float: right;
+        width: 30%;
+        margin-top: 10px;
+
+        .quote {
+          padding: 5px;
+
+          input,
+          textarea {
+            width: 100%;
+          }
+        }
+      }
+
+      article#main-col {
+        float: left;
+        width: 65%;
+      }
+
+      ul#services li {
+        list-style: none;
+        padding: 20px;
+        border: #cccccc solid 1px;
+        margin-bottom: 5px;
+        background-color: #e6e6e6;
+      }
+    }
+  }
+
+  footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: #000000;
+    background-color: $secondary-color;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #branding,
+  nav,
+  nav li,
+  #newsletter h1,
+  #newsletter form,
+  #boxes .container .box,
+  #main .container article#main-col,
+  #main .container aside#sidebar {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  header {
+    padding-bottom: 20px;
+
+    &.showcase h1 {
+      margin-top: 40px;
+    }
+  }
+
+  section {
+    &#newsletter,
+    &#main {
+      button {
+        display: block;
+        width: 100%;
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
